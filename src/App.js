@@ -64,13 +64,16 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/company/:id" element={<Company />} />
-              <Route path="/company/detail/:name/:id" element={<CompanyDetail />} />
+              <Route
+                path="/company/detail/:name/:id"
+                element={<CompanyDetail />}
+              />
 
               <Route path="/report" element={<Report />} />
 
               {AUTH !== "U" ? (
                 <>
-                  <Route path="/management/process" element={<MProcess />} />
+                  <Route path="/management/processs" element={<MProcess />} />
                   <Route path="/management/company" element={<MCompany />} />
                   <Route path="/management/business" element={<MBusiness />} />
                   <Route path="/management/account" element={<MAccount />} />

@@ -77,7 +77,11 @@ const Business = () => {
 
   const handlePrevPage = () => {
     const prevStart = Page_Range.start - 10;
-    setPage_Range(prevStart >= 0 ? Calc_Page_Range(prevStart, pagination.max) : Calc_Page_Range(0, pagination.max));
+    setPage_Range(
+      prevStart >= 0
+        ? Calc_Page_Range(prevStart, pagination.max)
+        : Calc_Page_Range(0, pagination.max)
+    );
   };
 
   const RenderPage = () => {
@@ -85,7 +89,11 @@ const Business = () => {
       const pageNum = idx + 1;
       if (pageNum >= Page_Range.start + 1 && pageNum <= Page_Range.end + 1) {
         return (
-          <button key={idx} className={pagination.current === pageNum ? "view" : ""} onClick={() => handlePageClick(pageNum)}>
+          <button
+            key={idx}
+            className={pagination.current === pageNum ? "view" : ""}
+            onClick={() => handlePageClick(pageNum)}
+          >
             {pageNum}
           </button>
         );
@@ -122,12 +130,21 @@ const Business = () => {
                       <span>진행 사업 리스트</span>
                     </div>
                     <div className="Search">
-                      <select className="Select" value={Filter_Option} onChange={(e) => setFilter_Option(e.target.value)}>
+                      <select
+                        className="Select"
+                        value={Filter_Option}
+                        onChange={(e) => setFilter_Option(e.target.value)}
+                      >
                         <option value="">필터 선택</option>
                         <option value="name">업체명</option>
                         <option value="addr">업체주소</option>
                       </select>
-                      <input type="text" placeholder="검색 내용을 입력해주세요..." value={Filter_Data || ""} onChange={(e) => setFilter_Data(e.target.value)} />
+                      <input
+                        type="text"
+                        placeholder="검색 내용을 입력해주세요..."
+                        value={Filter_Data || ""}
+                        onChange={(e) => setFilter_Data(e.target.value)}
+                      />
                       <button className="BTN" onClick={handleSearch}>
                         검색
                       </button>
@@ -160,15 +177,23 @@ const Business = () => {
                           // const Biz_State = item.biz_process === "착수신고" ? "G" : item.biz_process.includes("문서재제출") ? "Y" : item.biz_process.includes("문서보완") ? "O" : "";
                           return (
                             <>
-                              <tr key={idx} className={idx === Click_Idx ? "active" : ""}>
+                              <tr
+                                key={idx}
+                                className={idx === Click_Idx ? "active" : ""}
+                              >
                                 <td>{item.representative}</td>
                                 <td>{item.biz_name}</td>
-                                <td className="Center">{item.factories.length - 1}</td>
+                                <td className="Center">
+                                  {item.factories.length - 1}
+                                </td>
                                 <td className="Center">
                                   {Commas(item.reduction_goal)} <em>tCO₂eq</em>
                                 </td>
                                 <td>
-                                  {item.biz_process} {item.biz_level === 0 ? "" : `${item.biz_level} 차`}
+                                  {item.biz_process}{" "}
+                                  {item.biz_level === 0
+                                    ? ""
+                                    : `${item.biz_level} 차`}
                                 </td>
                                 <td className="BTN">
                                   <button

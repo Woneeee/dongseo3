@@ -52,10 +52,21 @@ const Company = () => {
     GET_Business();
   }, [id]);
 
-  const Total_Goal = Data.reduce((sum, item) => sum + (item.reduction_goal || 0), 0);
-  const Total_Now = Data.reduce((sum, item) => sum + (item.reduction_now || 0), 0);
-  const Total_Remain = Data.reduce((sum, item) => sum + (item.reduction_remain || 0), 0);
+  const Total_Goal = Data.reduce(
+    (sum, item) => sum + (item.reduction_goal || 0),
+    0
+  );
+  const Total_Now = Data.reduce(
+    (sum, item) => sum + (item.reduction_now || 0),
+    0
+  );
+  const Total_Remain = Data.reduce(
+    (sum, item) => sum + (item.reduction_remain || 0),
+    0
+  );
   const Total_Percent = Total_Goal > 0 ? (Total_Now / Total_Goal) * 100 : 0;
+
+  console.log(Data);
 
   return (
     <section className="Main_Company_Sec Sec">
@@ -103,7 +114,10 @@ const Company = () => {
                 </div>
                 <div className="Comment">
                   <BsGraphUp />
-                  <p>현 시점 으로 부터 8년 뒤 목표 수치에 도달할 가능성이 높습니다.</p>
+                  <p>
+                    현 시점 으로 부터 8년 뒤 목표 수치에 도달할 가능성이
+                    높습니다.
+                  </p>
                 </div>
               </div>
             </div>
@@ -116,7 +130,9 @@ const Company = () => {
                       className="Name"
                       onClick={() => {
                         if (AUTH !== "U") {
-                          Navigate(`/company/detail/${item.name}/${item.compressors[0].idx}`);
+                          Navigate(
+                            `/company/detail/${item.name}/${item.compressors[0].idx}`
+                          );
                           sessionStorage.setItem("Click_Addr", item.addr);
                         }
                       }}
@@ -167,7 +183,10 @@ const Company = () => {
                       </div>
 
                       <div className="Right">
-                        <ChartPie Target={item.reduction_goal} Cur={item.reduction_now} />
+                        <ChartPie
+                          Target={item.reduction_goal}
+                          Cur={item.reduction_now}
+                        />
                       </div>
                     </div>
                   </div>
