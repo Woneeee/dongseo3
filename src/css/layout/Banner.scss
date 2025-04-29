@@ -1,0 +1,99 @@
+.Banner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+
+  background: var(--white-color);
+  box-shadow: 3px 3px 5px var(--white-color-2);
+
+  width: 100%;
+  height: 90px;
+
+  padding: 20px 30px;
+  padding-left: 230px;
+
+  z-index: 998;
+
+  .B_Inner {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    // 부하 시간
+    .Load span {
+      display: block;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 3px 3px 5px #b8b8b8;
+      padding: 10px;
+      min-width: 120px;
+      color: var(--white-color);
+
+      &.High {
+        background: var(--red-color);
+      }
+      &.Middle {
+        background: var(--orange-color);
+      }
+      &.Low {
+        background: var(--green-color);
+      }
+    }
+  }
+
+  .Info {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    .My_Data {
+      position: relative;
+      display: block;
+      text-align: center;
+
+      background: linear-gradient(135deg, #e6e9f0 50%, #ffffff 100%);
+      box-shadow: 3px 3px 5px #b8b8b8;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      padding: 10px;
+
+      min-width: 150px;
+      height: 100%;
+
+      &:hover ul {
+        opacity: 1;
+        visibility: visible;
+      }
+      ul {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background: linear-gradient(135deg, rgb(147, 165, 207) 0%, rgb(228, 239, 233) 200%);
+        box-shadow: 3px 3px 5px #b8b8b8;
+        border-radius: 5px;
+        width: 100%;
+        overflow: hidden;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: 0.3s;
+        li {
+          padding: 10px;
+          cursor: pointer;
+          color: var(--white-color);
+          transition: 0.3s;
+          &:hover {
+            background: linear-gradient(135deg, var(--red-color) 0%, var(--orange-color) 100%);
+          }
+        }
+      }
+    }
+  }
+}

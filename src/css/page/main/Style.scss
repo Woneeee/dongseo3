@@ -1,0 +1,679 @@
+// Index.jsx
+
+.Main_Sec {
+  // 검색 영역
+  .Search {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+
+    margin-bottom: 20px;
+
+    .Select,
+    input {
+      padding: 10px;
+      min-width: 100px;
+      border-radius: 5px;
+      background: var(--white-color);
+      border: 1px solid var(--white-color-1);
+      box-shadow: 1px 1px 3px var(--white-color-2);
+    }
+
+    .BTN {
+      background: linear-gradient(135deg, var(--blue-color) 0%, #453be6 150%);
+      border: 1px solid transparent;
+      box-shadow: 1px 1px 3px var(--white-color-2);
+      border-radius: 5px;
+      color: var(--white-color);
+      padding: 10px;
+      min-width: 100px;
+    }
+  }
+
+  // 실 화면 데이터
+  .Main_Data {
+    position: relative;
+    display: grid;
+    gap: 60px;
+    align-items: self-start;
+    grid-template-columns: repeat(5, 1fr);
+
+    .Left {
+      grid-column: span 3;
+
+      .Company {
+        display: grid;
+        gap: 15px;
+        align-content: baseline;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 20px;
+        min-height: 730px;
+      }
+
+      .Item {
+        position: relative;
+        border-radius: 8px;
+        background: rgba(240, 244, 247, 0.6);
+        backdrop-filter: blur(5px);
+
+        box-shadow: 3px 3px 5px var(--white-color-2), 3px 3px 3px var(--white-color) inset;
+
+        padding: 15px 20px 15px 40px;
+        overflow: hidden;
+
+        .Title {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+
+          .Name {
+            &:hover span {
+              background: linear-gradient(135deg, var(--blue-color) 0, var(--aqua-color) 100%);
+              background-clip: text;
+              -webkit-background-clip: text;
+              color: #0000;
+            }
+
+            span {
+              display: block;
+              font-size: 16px;
+              font-weight: 700;
+              margin-bottom: 5px;
+              cursor: pointer;
+              transition: 0.3s;
+            }
+            p {
+              font-weight: 300;
+              letter-spacing: -0.5px;
+              font-size: 12px;
+            }
+          }
+          .Biz_S.Items {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+
+            font-size: 12px;
+            color: var(--gray-color-5);
+
+            em {
+              display: block;
+              background: #e6e9f0;
+              box-shadow: 1px 1px 1px var(--white-color-3);
+              border-radius: 5px;
+
+              padding: 3px 8px;
+            }
+            &.G em {
+              background: var(--green-color);
+            }
+            &.Y em {
+              background: var(--yellow-color);
+            }
+            &.O em {
+              background: var(--orange-color);
+              color: var(--white-color);
+            }
+
+            p {
+              min-width: 70px;
+            }
+          }
+          .Count {
+            display: flex;
+            gap: 5px;
+            align-items: baseline;
+            justify-content: center;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            background: linear-gradient(135deg, var(--blue-color) 0%, #453be6 150%);
+            border-radius: 0 8px 0 8px;
+
+            color: var(--white-color);
+
+            min-width: 50px;
+            padding: 8px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            em {
+              font-size: 12px;
+              font-weight: 400;
+            }
+          }
+        }
+
+        .Desc {
+          .Info {
+            display: grid;
+            gap: 5px;
+            margin-bottom: 10px;
+            grid-column: span 2;
+          }
+
+          .Emissions {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(3, 1fr);
+          }
+          .Data {
+            background: linear-gradient(135deg, #e6e9f0 0%, #f5f5f5 100%);
+            box-shadow: 1px 1px 1px var(--white-color-2);
+            border-radius: 5px;
+
+            padding: 10px 5px;
+
+            span {
+              display: block;
+
+              font-size: 14px;
+              font-weight: 500;
+              letter-spacing: 2px;
+              color: var(--blue-color-5);
+              padding-left: 10px;
+              margin-bottom: 5px;
+            }
+            p {
+              display: flex;
+              gap: 3px;
+              align-items: baseline;
+              justify-content: flex-end;
+              font-size: 12px;
+              font-weight: 400;
+              em {
+                font-size: 10px;
+                font-weight: 300;
+                color: var(--gray-color-5);
+              }
+            }
+          }
+        }
+      }
+
+      .Paging {
+        grid-column: span 2;
+        margin-bottom: 30px;
+      }
+    }
+
+    .Right {
+      position: sticky;
+      top: 130px;
+      right: 0;
+      grid-column: span 2;
+
+      .Item {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(5px);
+
+        box-shadow: 0px 0px 10px var(--white-color-5);
+        height: calc(100% - 68px - 50px);
+
+        border-radius: 8px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+// Company.jsx
+.Main_Detail_Sec {
+  .Inner {
+    .Top {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: space-between;
+
+      .Title {
+        margin-bottom: 30px;
+        h2 {
+          display: block;
+          font-size: 35px;
+          font-weight: 700;
+          margin-bottom: 10px;
+        }
+
+        address {
+          font-weight: 300;
+        }
+      }
+    }
+
+    .Main_Data {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+
+      .Left {
+        background: rgba(240, 244, 247, 0.6);
+        backdrop-filter: blur(5px);
+
+        box-shadow: 3px 3px 5px var(--white-color-2), 3px 3px 3px var(--white-color) inset;
+        border-radius: 10px;
+        min-height: 650px;
+
+        padding: 50px;
+
+        .Title {
+          display: flex;
+          gap: 30px;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          .Name {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            span {
+              display: block;
+              font-size: 25px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .Search {
+        display: flex;
+        gap: 20px;
+
+        .Select {
+          padding: 8px;
+          min-width: 200px;
+          border-radius: 5px;
+          background: var(--white-color);
+          border: 1px solid var(--white-color-1);
+          box-shadow: 1px 1px 3px var(--white-color-2);
+        }
+
+        .BTN {
+          background: linear-gradient(135deg, var(--blue-color) 0%, #453be6 150%);
+          border: 1px solid transparent;
+          box-shadow: 1px 1px 3px var(--white-color-2);
+          border-radius: 5px;
+          color: var(--white-color);
+          padding: 8px;
+          min-width: 100px;
+        }
+      }
+
+      .List {
+        display: grid;
+        gap: 10px;
+
+        padding: 10px;
+        padding-right: 15px;
+        background: var(--white-color);
+        border: 1px solid var(--white-color-1);
+        box-shadow: 3px 3px 5px var(--white-color-2);
+        border-radius: 5px;
+
+        max-height: 90px;
+        overflow-y: auto;
+        margin-bottom: 50px;
+
+        li {
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          em {
+            display: block;
+            background: #453be6;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+          }
+          .Val {
+            display: flex;
+            gap: 5px;
+
+            font-size: 14px;
+          }
+        }
+      }
+
+      .Right {
+        position: relative;
+
+        background: rgba(240, 244, 247, 0.6);
+        backdrop-filter: blur(5px);
+
+        box-shadow: 3px 3px 5px var(--white-color-2), 3px 3px 3px var(--white-color) inset;
+        border-radius: 10px;
+        min-height: 650px;
+
+        padding: 50px;
+
+        .Title {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+
+          margin-bottom: 30px;
+          .Name {
+            span {
+              display: flex;
+              gap: 10px;
+              align-items: baseline;
+              font-size: 30px;
+              font-weight: 900;
+              margin-bottom: 10px;
+
+              .Info_Ico {
+                font-size: 20px;
+                cursor: pointer;
+                &.on,
+                &:hover {
+                  color: var(--blue-color);
+                }
+              }
+            }
+            p {
+              font-weight: 300;
+            }
+          }
+
+          .Date {
+            border-radius: 5px;
+            background: var(--white-color);
+            border: 1px solid var(--white-color-1);
+            box-shadow: 1px 1px 3px var(--white-color-2);
+            padding-left: 10px;
+            span {
+              display: inline-block;
+              padding-right: 10px;
+              color: var(--blue-color);
+            }
+
+            input {
+              background: transparent;
+              box-shadow: none;
+            }
+          }
+        }
+
+        .Info {
+          display: grid;
+          gap: 30px;
+          grid-template-columns: repeat(3, 1fr);
+
+          margin-bottom: 38px;
+          .IMG_Box {
+            grid-column: span 1;
+            img {
+              height: 250px;
+            }
+          }
+
+          .Data_List {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+
+            grid-column: span 2;
+
+            li {
+              span {
+                display: block;
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 10px;
+
+                color: #453be6;
+              }
+              p {
+                display: flex;
+                gap: 5px;
+                align-items: baseline;
+                justify-content: flex-end;
+
+                background: var(--white-color);
+                border-radius: 5px;
+                border: 1px solid var(--white-color-2);
+                padding: 14px 20px;
+
+                em {
+                  font-size: 14px;
+                  font-weight: 300;
+                }
+              }
+
+              .INP_Box {
+                display: flex;
+                gap: 10px;
+                align-items: baseline;
+                justify-content: flex-end;
+
+                background: var(--white-color);
+                border-radius: 5px;
+                border: 1px solid var(--white-color-2);
+                padding: 10px 20px;
+
+                transition: 0.3s;
+                &:hover {
+                  border: 1px solid #453be6;
+                  background: rgba(69, 59, 230, 0.1);
+                  color: var(--purple-color-2);
+                }
+                input {
+                  text-align: right;
+                  max-width: 120px;
+                  background: transparent;
+                }
+
+                em {
+                  font-size: 14px;
+                  font-weight: 300;
+                }
+              }
+            }
+          }
+        }
+
+        .Calculate {
+          .Calc_Title {
+            display: flex;
+            justify-content: flex-end;
+            button {
+              display: block;
+              text-align: right;
+              font-size: 18px;
+              font-weight: 500;
+
+              background: var(--purple-color);
+              border-radius: 5px 5px 0 0;
+
+              color: var(--white-color);
+
+              padding: 5px 20px;
+            }
+          }
+          .Inner {
+            border-top: 1px solid var(--purple-color);
+
+            padding-top: 30px;
+          }
+        }
+
+        // 아이콘 클릭 시 모달창 on
+        .Modal_Info {
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          width: 100%;
+          height: 0%;
+          background: rgba(0, 0, 0, 0.8);
+          border-radius: 10px;
+          backdrop-filter: blur(10px);
+
+          visibility: hidden;
+          opacity: 0;
+          transition: 0.5s;
+
+          z-index: 10;
+          &.on {
+            visibility: visible;
+            height: 100%;
+            opacity: 1;
+          }
+
+          .Inner {
+            padding: 50px;
+
+            color: var(--white-color);
+
+            .Title {
+              display: block;
+              .Name {
+                display: flex;
+
+                justify-content: space-between;
+
+                .Close_Ico {
+                  font-size: 30px;
+                  cursor: pointer;
+                  transition: 0.45s;
+                  &:hover {
+                    color: var(--red-color);
+                  }
+                }
+              }
+              p {
+                font-size: 14px;
+                color: var(--white-color-2);
+              }
+            }
+
+            .Desc {
+              display: grid;
+              gap: 30px;
+
+              .Info_List {
+                display: grid;
+                gap: 10px;
+                grid-template-columns: repeat(2, 1fr);
+
+                .Sub_Title {
+                  grid-column: span 2;
+                  span {
+                    display: flex;
+                    gap: 5px;
+                    align-items: baseline;
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: var(--green-color);
+
+                    em {
+                      font-size: 12px;
+                      font-weight: 300;
+                      color: var(--yellow-color-1);
+
+                      b {
+                        color: var(--orange-color);
+                        font-weight: 500;
+                      }
+
+                      .Gear {
+                        color: var(--orange-color);
+                        font-size: 10px;
+                      }
+                    }
+                  }
+                }
+
+                .Items {
+                  background: rgba(61, 87, 111, 0.5);
+                  border-radius: 5px;
+                  padding: 10px;
+                  font-size: 14px;
+                  span {
+                    display: block;
+                    margin-bottom: 5px;
+
+                    .Gear {
+                      font-size: 10px;
+                      color: var(--orange-color);
+                    }
+                  }
+                  p {
+                    font-weight: 100;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .Data,
+      .Calculate .Inner {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+
+        border-bottom: 1px solid var(--gray-color);
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+
+        .Val {
+          span {
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+
+            color: #453be6;
+          }
+          .INP_Box {
+            display: flex;
+            gap: 10px;
+            align-items: baseline;
+            justify-content: flex-end;
+
+            background: var(--white-color);
+            border-radius: 5px;
+            border: 1px solid var(--white-color-2);
+            padding: 10px 20px;
+
+            transition: 0.3s;
+            &:hover {
+              border: 1px solid #453be6;
+              background: rgba(69, 59, 230, 0.1);
+              color: var(--purple-color-2);
+            }
+            input {
+              text-align: right;
+              max-width: 120px;
+              background: transparent;
+            }
+
+            em {
+              font-size: 14px;
+              font-weight: 300;
+            }
+          }
+        }
+      }
+
+      .Calculate .Inner .Val {
+        span {
+          color: var(--blue-color);
+        }
+        .INP_Box {
+          &:hover {
+            border: 1px solid var(--blue-color);
+            background: #2597f41a;
+            color: var(--blue-color-2);
+          }
+        }
+      }
+    }
+  }
+}

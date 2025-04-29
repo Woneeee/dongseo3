@@ -1,0 +1,221 @@
+.Management_Sec.Company {
+  .Title {
+    margin-bottom: 20px;
+    h2 {
+      display: block;
+      font-size: 35px;
+      font-weight: 700;
+
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-weight: 300;
+    }
+  }
+
+  .Main_Data {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    .Left {
+      grid-column: span 2;
+
+      background: rgba(240, 244, 247, 0.6);
+      backdrop-filter: blur(2px);
+      box-shadow: 3px 3px 5px var(--white-color-2), 3px 3px 3px var(--white-color) inset;
+      border-radius: 10px;
+      min-height: 650px;
+      padding: 50px;
+      padding-bottom: 30px;
+    }
+
+    .Title .Name {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      span {
+        display: block;
+        font-size: 25px;
+        font-weight: 500;
+      }
+    }
+
+    .Table {
+      width: 100%;
+      background: var(--white-color);
+      box-shadow: 1px 1px 3px var(--white-color-2);
+      border-radius: 5px;
+      overflow: hidden;
+
+      margin-bottom: 30px;
+
+      thead tr {
+        background: linear-gradient(135deg, #453be6 0%, #d500f9 150%);
+        th {
+          &.Num {
+            padding: 15px;
+            text-align: center;
+          }
+          padding: 15px 5px;
+          text-align: left;
+          color: var(--white-color);
+        }
+      }
+      tbody tr {
+        td {
+          &.Num {
+            padding: 15px;
+            text-align: center;
+          }
+
+          padding: 15px 5px;
+          text-align: left;
+
+          font-size: 14px;
+          font-weight: 300;
+          border-bottom: 1px solid var(--white-color-1);
+
+          transition: 0.3s;
+          cursor: pointer;
+        }
+
+        &:hover td {
+          color: var(--neon-purple);
+        }
+        &.active td {
+          font-weight: 400;
+          color: var(--purple-color);
+        }
+      }
+
+      tr:nth-child(even) {
+        background: rgba(240, 244, 247, 0.6);
+      }
+    }
+  }
+
+  .Right {
+    background: rgba(240, 244, 247, 0.6);
+    backdrop-filter: blur(2px);
+    box-shadow: 3px 3px 5px var(--white-color-2), 3px 3px 3px var(--white-color) inset;
+    border-radius: 10px;
+    min-height: 650px;
+    padding: 50px;
+    padding-bottom: 30px;
+
+    .Title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        display: block;
+        font-size: 30px;
+        font-weight: 700;
+      }
+
+      .Save_BTN .BTN {
+        background: linear-gradient(135deg, #453be6 0%, #d500f9 150%);
+        border: 1px solid transparent;
+        box-shadow: 3px 3px 5px var(--white-color-2);
+        border-radius: 5px;
+        color: var(--white-color);
+        padding: 8px 15px;
+        width: 100%;
+      }
+    }
+
+    .Select_Data {
+      display: grid;
+      gap: 20px;
+
+      .INP_BOX {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        &.Two_Data {
+          display: grid;
+          gap: 20px;
+          grid-template-columns: repeat(2, 1fr);
+          .Items {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+          }
+        }
+
+        span {
+          font-size: 14px;
+          font-weight: 300;
+        }
+
+        input {
+          background: var(--white-color);
+          border-radius: 5px;
+          border: 1px solid var(--white-color-2);
+          padding: 10px 20px;
+
+          font-size: 14px;
+        }
+
+        .Add_Search {
+          display: flex;
+          gap: 20px;
+          justify-content: space-between;
+          input {
+            width: 100%;
+          }
+          button {
+            background: linear-gradient(135deg, #e6e9f0 50%, #ffffff 100%);
+            box-shadow: 1px 1px 3px var(--white-color-2);
+            border: 1px solid transparent;
+            border-radius: 5px;
+            padding: 8px;
+            min-width: 100px;
+          }
+        }
+      }
+
+      .Sel_BOX {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        &.Company {
+          align-items: end;
+          .Items {
+            grid-column: span 2;
+            span {
+              margin-bottom: 5px;
+            }
+            input {
+              width: 100%;
+            }
+          }
+        }
+        span {
+          display: block;
+          grid-column: span 3;
+          font-size: 14px;
+          font-weight: 300;
+        }
+
+        select {
+          background: var(--white-color);
+          border-radius: 5px;
+          border: 1px solid var(--white-color-2);
+          padding: 10px 20px;
+          font-size: 14px;
+          &.Progress {
+            grid-column: span 2;
+          }
+          &.Count {
+            grid-column: span 1;
+          }
+        }
+      }
+    }
+  }
+}

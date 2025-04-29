@@ -1,0 +1,227 @@
+.Report_Sec {
+  .Inner {
+    // width: 794px;
+    // height: 700px;
+    margin: 0 auto;
+
+    // background: var(--white-color);
+    // box-shadow: 0 0 3px var(--white-color-2);
+
+    background: rgba(240, 244, 247, 0.6);
+    backdrop-filter: blur(2px);
+
+    box-shadow: 3px 3px 5px var(--white-color-2), 3px 3px 3px var(--white-color) inset;
+    border-radius: 10px;
+    min-height: 650px;
+
+    padding: 50px;
+
+    &.Mode {
+      width: 794px;
+    }
+
+    .Title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      border-bottom: 2px solid #013b80;
+      margin-bottom: 30px;
+      span {
+        display: block;
+        font-size: 14px;
+        font-weight: 300;
+
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        padding-bottom: 15px;
+      }
+
+      .Print {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        background-image: linear-gradient(135deg, #4facfe 0%, #00f2fe 150%);
+        border: 1px solid transparent;
+        box-shadow: 1px 1px 3px var(--white-color-2);
+        border-radius: 5px;
+
+        color: var(--white-color);
+        padding: 8px;
+        min-width: 100px;
+        height: auto;
+
+        svg {
+          font-size: 25px;
+        }
+      }
+    }
+
+    .Total_Data {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+
+      margin-bottom: 20px;
+
+      .Items {
+        position: relative;
+        padding: 15px;
+        background: var(--white-color);
+        box-shadow: 1px 1px 3px var(--white-color-2);
+        border-radius: 5px;
+
+        img {
+          position: absolute;
+          top: -10px;
+          left: 0;
+          width: 45px;
+        }
+
+        span {
+          display: block;
+          padding-left: 35px;
+          margin-bottom: 10px;
+        }
+
+        p {
+          display: flex;
+          gap: 5px;
+          align-items: baseline;
+          justify-content: flex-end;
+
+          font-size: 25px;
+          font-weight: 700;
+
+          em {
+            font-size: 12px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+
+    .Chart_Data {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+
+      margin-bottom: 20px;
+
+      .Items {
+        position: relative;
+        padding: 15px;
+        background: var(--white-color);
+        box-shadow: 1px 1px 3px var(--white-color-2);
+        border-radius: 5px;
+
+        &.Bar_Chart {
+          grid-column: span 2;
+        }
+
+        .Name {
+          margin-bottom: 20px;
+          span {
+            font-size: 18px;
+            font-weight: 500;
+          }
+        }
+
+        .Chart {
+          width: 100%;
+          height: 200px;
+        }
+      }
+    }
+
+    .Data {
+      .Items {
+        height: 100%;
+        .Name {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          .ICON {
+            width: 16px;
+            height: 16px;
+            rotate: 180deg;
+            color: var(--green-color);
+          }
+        }
+
+        .Chart {
+          display: grid;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+
+          .Increase {
+            display: flex;
+            gap: 5px;
+            align-items: baseline;
+            justify-content: center;
+
+            span {
+              font-weight: 300;
+            }
+            p {
+              font-size: 18px;
+              font-weight: 700;
+              color: var(--blue-color);
+            }
+            em {
+              font-size: 14px;
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
+
+    .Table {
+      background: var(--white-color);
+      box-shadow: 1px 1px 3px var(--white-color-2);
+      border-radius: 5px;
+
+      width: 100%;
+
+      th {
+        background: var(--white-color-1);
+        padding: 15px;
+        font-weight: 500;
+      }
+
+      td {
+        text-align: center;
+        padding: 8px;
+        font-size: 14px;
+        em {
+          padding-left: 5px;
+          font-size: 10px;
+          font-weight: 300;
+        }
+      }
+      tbody tr ~ tr {
+        border-top: 1px solid var(--white-color-1);
+      }
+    }
+  }
+}
+
+// 출력화면
+
+@media print {
+  .Print {
+    display: none !important;
+  }
+
+  .Report_Sec {
+    .Inner {
+      background: var(--white-color);
+      box-shadow: none;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+.Management_Sec {
+  position: relative;
+
+  .Title {
+    margin-bottom: 20px;
+    h2 {
+      display: block;
+      font-size: 35px;
+      font-weight: 700;
+
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-weight: 300;
+    }
+  }
+  .Main_Data {
+    position: relative;
+    background: rgba(240, 244, 247, 0.6);
+    backdrop-filter: blur(2px);
+    box-shadow: 3px 3px 5px var(--white-color-2), 3px 3px 3px var(--white-color) inset;
+    border-radius: 10px;
+    min-height: 650px;
+    padding: 50px;
+    padding-bottom: 30px;
+
+    .Title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .Name {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        span {
+          display: block;
+          font-size: 25px;
+          font-weight: 500;
+        }
+      }
+
+      .Add_BTN {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        background: #453be6;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: var(--white-color);
+        svg {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  .Table {
+    width: 100%;
+    background: var(--white-color);
+    box-shadow: 1px 1px 3px var(--white-color-2);
+    border-radius: 5px;
+    overflow: hidden;
+
+    margin-bottom: 30px;
+
+    thead tr {
+      background: linear-gradient(135deg, var(--blue-color) 0%, #453be6 150%);
+      th {
+        &.Center {
+          padding: 15px;
+          text-align: center;
+        }
+        padding: 15px 5px;
+        text-align: left;
+        color: var(--white-color);
+      }
+    }
+
+    tbody tr {
+      td {
+        &.Center {
+          padding: 15px;
+          text-align: center;
+        }
+
+        padding: 15px 5px;
+        text-align: left;
+
+        font-size: 14px;
+
+        border-bottom: 1px solid var(--white-color-1);
+
+        transition: 0.3s;
+        cursor: pointer;
+
+        &.BTN {
+          text-align: center;
+          padding: 0 5px;
+
+          button {
+            color: var(--white-color);
+            padding: 5px;
+            width: 80%;
+            border-radius: 5px;
+          }
+          .Edit {
+            background: linear-gradient(135deg, var(--blue-color) 50%, #453be6 150%);
+          }
+          .Del {
+            background: linear-gradient(135deg, var(--red-color) 50%, var(--neon-red) 150%);
+          }
+        }
+
+        em {
+          font-size: 10px;
+          font-weight: 300;
+        }
+      }
+
+      &:hover td {
+        color: var(--neon-blue);
+      }
+      &.active td {
+        font-weight: 400;
+        color: var(--neon-blue);
+      }
+    }
+
+    tr:nth-child(even) {
+      background: rgba(240, 244, 247, 0.6);
+    }
+  }
+}

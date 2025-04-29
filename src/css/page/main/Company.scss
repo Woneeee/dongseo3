@@ -1,0 +1,261 @@
+.Main_Company_Sec {
+  .Inner {
+    .Top {
+      //   background: var(--white-color);
+      background: url(../../../assets/img/Company_bg.png) no-repeat center left/cover;
+
+      border-radius: 5px;
+      box-shadow: 3px 3px 5px var(--white-color-2);
+
+      margin-bottom: 30px;
+
+      .Title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px;
+        h2 {
+          font-size: 25px;
+          font-weight: 700;
+          color: var(--gray-color-3);
+        }
+        .Status {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background: var(--gray-color);
+          border-radius: 20px;
+          padding: 5px;
+
+          padding-right: 20px;
+
+          span {
+            display: block;
+            background: var(--green-color);
+            border-radius: 20px;
+            padding: 5px 10px;
+          }
+          p {
+            color: var(--white-color);
+          }
+        }
+      }
+
+      .Calculate {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 20px 30px;
+        .Items {
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -15px;
+            transform: translateY(-50%);
+            background: var(--blue-color);
+            width: 1px;
+            height: 80%;
+          }
+
+          &:nth-child(4)::before {
+            content: none;
+          }
+
+          span {
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--blue-color-3);
+          }
+          p {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            align-items: baseline;
+
+            font-size: 25px;
+            font-weight: 700;
+            color: var(--blue-color);
+            em {
+              font-size: 16px;
+              font-weight: 300;
+              color: #333;
+            }
+          }
+        }
+
+        .Comment {
+          grid-column: span 4;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          justify-content: flex-end;
+
+          color: var(--gray-color-5);
+          font-size: 14px;
+          font-weight: 300;
+        }
+      }
+    }
+
+    .Company_Info {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+
+      .Items {
+        position: relative;
+        border-radius: 8px;
+        background: rgba(240, 244, 247, 0.6);
+        backdrop-filter: blur(5px);
+
+        box-shadow: 3px 3px 5px var(--white-color-2), 3px 3px 3px var(--white-color) inset;
+
+        padding: 30px 20px 30px 40px;
+        overflow: hidden;
+
+        .Name {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          margin-bottom: 20px;
+          cursor: pointer;
+
+          &:hover span {
+            background: linear-gradient(135deg, var(--blue-color) 0, var(--aqua-color) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: #0000;
+          }
+
+          .T_ICO {
+            background: var(--blue-color);
+
+            border-radius: 5px;
+            color: var(--white-color);
+            padding: 8px 10px;
+
+            font-size: 14px;
+            font-weight: 500;
+          }
+
+          span {
+            font-size: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+          }
+        }
+
+        .Other {
+          display: flex;
+          gap: 10px;
+          flex-direction: column;
+          margin-bottom: 30px;
+
+          .Data {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            &.Two {
+              justify-content: space-between;
+            }
+
+            font-size: 14px;
+            font-weight: 300;
+
+            em {
+              display: block;
+              background: #e6e9f0;
+              box-shadow: 1px 1px 1px var(--white-color-3);
+              border-radius: 5px;
+              padding: 3px 10px;
+            }
+
+            .D_Items {
+              display: flex;
+              gap: 10px;
+              align-items: center;
+            }
+          }
+        }
+
+        .Emissions {
+          display: grid;
+          gap: 10px;
+          grid-template-columns: repeat(3, 1fr);
+
+          .Left {
+            grid-column: span 2;
+
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+
+            .Data {
+              position: relative;
+              display: flex;
+              gap: 10px;
+              justify-content: space-between;
+
+              &::before {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+
+                width: 100%;
+                height: 1px;
+                border: 1px dashed var(--white-color-2);
+              }
+
+              span {
+                display: block;
+                position: relative;
+
+                padding-left: 15px;
+
+                color: var(--gray-color-5);
+
+                &::before {
+                  content: "";
+                  position: absolute;
+                  top: 50%;
+                  left: 0;
+                  transform: translateY(-50%);
+
+                  background: var(--blue-color);
+                  border-radius: 50%;
+
+                  width: 5px;
+                  height: 5px;
+                }
+              }
+
+              p {
+                display: flex;
+                gap: 5px;
+                align-items: baseline;
+
+                em {
+                  font-size: 12px;
+                  font-weight: 300;
+                }
+              }
+            }
+          }
+        }
+        .Right {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
