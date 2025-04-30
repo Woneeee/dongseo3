@@ -26,6 +26,9 @@ const Business = () => {
   const [pagination, setPagination] = useState({ current: 1, max: 1 });
   const [loading, setLoading] = useState(false);
   const [Page_Range, setPage_Range] = useState({ start: 0, end: 9 });
+  // start, end 는 idx 인거고, current, max 는 페이지 그 자체라서 idx 가 X
+  // start, end 는 각각 말 그대로 보여지는 페이지 그룹의 시작값, 끝 값 인거임
+  // current, max 는 내가 보고 있는 페이지, 그리고 전체 페이지 개수를 나타냄
 
   const GET_Business = async (page = 1) => {
     setLoading(true);
@@ -80,7 +83,7 @@ const Business = () => {
     setPage_Range(
       prevStart >= 0
         ? Calc_Page_Range(prevStart, pagination.max)
-        : Calc_Page_Range(0, pagination.max)
+        : Calc_Page_Range(0, pagination.max) // 초기로 돌려줌
     );
   };
 
