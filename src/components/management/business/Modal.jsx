@@ -8,7 +8,11 @@ const Modal = ({ Idx, Open, setOpen, Mode }) => {
       <div className="Inner">
         <div className="Title">
           <span>신규 사업 등록</span>
-          <BsXLg className="Close" onClick={() => setOpen(false)} title="닫기" />
+          <BsXLg
+            className="Close"
+            onClick={() => setOpen(false)}
+            title="닫기"
+          />
         </div>
 
         <div className="Select_Data">
