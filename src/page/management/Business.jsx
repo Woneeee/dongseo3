@@ -53,6 +53,39 @@ const Business = () => {
     }
   };
 
+  const Change_Representative = async () => {
+    try {
+      const res = await axios.patch(
+        `${API_URL}/biz-group/representative/change`,
+        {
+          group_idx: 24, // 교체할 그룹의 인덱스 값
+          representative_idx: 174, // 교체하고 싶은 기업의 인덱스 값
+        },
+        { headers: { token: TOKEN } }
+      );
+      console.log("그룹 내 대표 업체 변경 성공:", res.data);
+    } catch (error) {
+      console.error("그룹 내 대표 업체 변경 실패:", error);
+    }
+  };
+
+  const Swap_Representative = async () => {
+    try {
+      const res = await axios.patch(
+        `${API_URL}/biz-group/representative/swap`,
+        {
+          swap_target_idx1: 89, // 교체할 그룹1 대표 기업의 인덱스 값
+          swap_target_idx2: 81, // 교체할 그룹2 대표 기업의 인덱스 값
+        },
+        { headers: { token: TOKEN } }
+      );
+      console.log("그룹 대표 교환 성공:", res.data);
+    } catch (error) {
+      console.error("그룹 대표 교환 실패:", error);
+    }
+  };
+  // 두개 그룹의 대표기업 끼리만 교체
+
   const handleSearch = () => {
     setPagination((prev) => ({ ...prev, current: 1 }));
     setPage_Range(Calc_Page_Range(0, pagination.max));
@@ -110,8 +143,19 @@ const Business = () => {
   }, [Level]);
 
   useEffect(() => {
+    Change_Representative();
+  }, []);
+
+  useEffect(() => {
+    Swap_Representative();
+  }, []);
+
+  useEffect(() => {
     setPage_Range(Calc_Page_Range(0, pagination.max));
   }, [pagination.max]);
+
+  console.log(Data);
+
   return (
     <>
       <section className="Management_Sec Company Sec">
